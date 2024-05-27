@@ -32,5 +32,7 @@ public interface CustomerService {
 	 
 	 public List<Customer> getCustomersByMobileNumber(String mobileNumber);
 	 
+	 public String updateFirstName(int id,String firstName);
+	 
 
 }

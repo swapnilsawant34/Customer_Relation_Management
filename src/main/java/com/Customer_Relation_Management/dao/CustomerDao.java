@@ -214,7 +214,7 @@ public class CustomerDao {
  		return list;
        }
        
-       
+       //API-12
        public List<Customer> getCustomersByEmail(String email)
        {
     	   Session session = sf.openSession();
@@ -227,7 +227,7 @@ public class CustomerDao {
  		
  		return list;
        }
-       
+       //API-13
        public List<Customer> getCustomersByMobileNumber(String mobileNumber)
        {
     	   Session session = sf.openSession();
@@ -241,4 +241,18 @@ public class CustomerDao {
  		return list;
        }
        
+       
+       //API-14
+       public String updateFirstName(int id,String firstName)
+       {
+    	   Session session = sf.openSession();
+    	   Transaction tr = session.beginTransaction();
+    	   Customer customer = session.get(Customer.class, id);
+    	   customer.setFirstName(firstName);
+    	   tr.commit();
+    	   session.close();
+    	   
+    	   return "Customer's First Name is updated Succesfully";
+    	   
+       }
 }

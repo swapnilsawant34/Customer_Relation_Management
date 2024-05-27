@@ -134,6 +134,14 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return customersByMobileNumber;
 	}
+
+
+	@Override
+	public String updateFirstName(int id, String firstName) {
+		String updateFirstName = customerDao.updateFirstName(id, firstName);
+		
+		return updateFirstName;
+	}
 	
 	
 	

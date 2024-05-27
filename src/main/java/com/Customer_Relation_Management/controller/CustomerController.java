@@ -1,6 +1,7 @@
 package com.Customer_Relation_Management.controller;
 
-import java.util.List;
+import java.util.*;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -129,7 +130,8 @@ public class CustomerController {
 			return customersByLastName;
 		}
 	
-	
+		
+				
 	
 	//API:12-fetch customers details by email
 	@GetMapping("/byemail/{email}")
@@ -140,16 +142,30 @@ public class CustomerController {
 		return customersByEmail;
 	}
 	
-	//API:13-fetch customers details by mobile number
-		@GetMapping("/bymobileno/{mobileNumber}")
-		public List<Customer> getCustomersByMobileNumber(@PathVariable String mobileNumber)
-		{
-			 List<Customer> customersByMobileNumber = customerService.getCustomersByMobileNumber(mobileNumber);
-			
-			return customersByMobileNumber;
-			
-		}
-		
-	//API:14-	
 	
+	
+	//API:13-fetch customers details by mobile number
+	@GetMapping("/bymobileno/{mobileNumber}")
+	public List<Customer> getCustomersByMobileNumber(@PathVariable String mobileNumber)
+	{
+		 List<Customer> customersByMobileNumber = customerService.getCustomersByMobileNumber(mobileNumber);
+		
+		return customersByMobileNumber;
+		
+	}
+	
+	//API:14-update customer details by first name
+		@PutMapping("/{id}")
+	       public String updateFirstName(@PathVariable int id,@RequestBody Map<String ,String> request) {
+
+		String firstName=request.get("firstName");
+		
+		 
+		
+		return customerService.updateFirstName(id, firstName);
+	     }
+	     
 }
+
+
+
