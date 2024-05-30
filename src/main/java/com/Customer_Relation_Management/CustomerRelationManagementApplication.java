@@ -8,6 +8,8 @@ public class CustomerRelationManagementApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(CustomerRelationManagementApplication.class, args);
+		
+		System.out.println("Welcome to Customer Relation Management application");
 	}
 
 }

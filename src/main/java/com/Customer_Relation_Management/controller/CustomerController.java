@@ -155,15 +155,32 @@ public class CustomerController {
 	}
 	
 	//API:14-update customer details by first name
-		@PutMapping("/{id}")
+		@PutMapping("/updatefirstname/{id}")
 	       public String updateFirstName(@PathVariable int id,@RequestBody Map<String ,String> request) {
 
 		String firstName=request.get("firstName");
-		
-		 
-		
 		return customerService.updateFirstName(id, firstName);
 	     }
+		
+		
+		
+		//API:15-update customer details by last name
+		@PutMapping("/updatelastname/{id}")
+	       public String updateLastName(@PathVariable int id,@RequestBody Map<String ,String> request) {
+
+		String lastName=request.get("lastName");
+		return customerService.updateLastName(id, lastName);
+	     }
+		
+	
+
+			// API:15-update customer details by last name
+			@PutMapping("/updateemail/{id}")
+			public String updateEmailId(@PathVariable int id, @RequestBody Map<String, String> request) {
+
+				String email = request.get("email");
+				return customerService.updateEmailId(id, email);
+			}
 	     
 }
 

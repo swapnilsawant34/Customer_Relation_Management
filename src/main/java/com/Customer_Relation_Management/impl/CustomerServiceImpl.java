@@ -142,6 +142,24 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return updateFirstName;
 	}
+
+
+	@Override
+	public String updateLastName(int id, String lastName) {
+		String updateLastName = customerDao.updateLastName(id, lastName);
+		
+		
+		return updateLastName;
+	}
+
+
+	@Override
+	public String updateEmailId(int id, String email) {
+		
+		String updateEmailId = customerDao.updateEmailId(id, email);
+		
+		return updateEmailId;
+	}
 	
 	
 	

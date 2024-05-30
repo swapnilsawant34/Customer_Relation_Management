@@ -34,5 +34,9 @@ public interface CustomerService {
 	 
 	 public String updateFirstName(int id,String firstName);
 	 
+	 public String updateLastName(int id,String lastName);
+	 
+	 public String updateEmailId(int id,String email);
+	 
 
 }

@@ -255,4 +255,31 @@ public class CustomerDao {
     	   return "Customer's First Name is updated Succesfully";
     	   
        }
+       
+       //API-15
+       public String updateLastName(int id,String lastName)
+       {
+    	   Session session = sf.openSession();
+    	   Transaction tr = session.beginTransaction();
+    	   Customer customer = session.get(Customer.class, id);
+    	   customer.setLastName(lastName);
+    	   tr.commit();
+    	   session.close();
+    	   
+    	   return "Customer's Last Name is updated Succesfully";
+    	   
+       }
+       
+       public String updateEmailId(int id,String email)
+       {
+    	   Session session = sf.openSession();
+    	   Transaction tr = session.beginTransaction();
+    	   Customer customer = session.get(Customer.class, id);
+    	   customer.setEmail(email);
+    	   tr.commit();
+    	   session.close();
+    	   
+    	   return "Customer's Email is updated Succesfully";
+    	   
+       }
 }
