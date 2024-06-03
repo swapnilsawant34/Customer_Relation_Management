@@ -282,4 +282,18 @@ public class CustomerDao {
     	   return "Customer's Email is updated Succesfully";
     	   
        }
+       
+       public String updateMobileNumber(int id,String mobileNumber)
+       {
+    	   Session session = sf.openSession();
+    	   Transaction tr = session.beginTransaction();
+    	   Customer customer = session.get(Customer.class, id);
+    	   customer.setMobileNumber(mobileNumber);
+    	   tr.commit();
+    	   session.close();
+    	   
+    	   return "Customer's Mobile Number is updated Succesfully"; 
+    	   
+    	   
+       }
 }

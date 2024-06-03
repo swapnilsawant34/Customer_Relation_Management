@@ -38,5 +38,7 @@ public interface CustomerService {
 	 
 	 public String updateEmailId(int id,String email);
 	 
+	 public String updateMobileNumber(int id,String mobileNumber);
+	 
 
 }

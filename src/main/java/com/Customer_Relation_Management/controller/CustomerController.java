@@ -174,13 +174,22 @@ public class CustomerController {
 		
 	
 
-			// API:15-update customer details by last name
+			// API:16-update customer details by mail id
 			@PutMapping("/updateemail/{id}")
 			public String updateEmailId(@PathVariable int id, @RequestBody Map<String, String> request) {
 
 				String email = request.get("email");
 				return customerService.updateEmailId(id, email);
 			}
+			
+			
+			// API:17-update customer details by mobile number.
+						@PutMapping("/updatemobileno/{id}")
+						public String updateMobileNumber(@PathVariable int id, @RequestBody Map<String, String> request) {
+
+							String mobileNumber = request.get("mobileNumber");
+							return customerService.updateMobileNumber(id, mobileNumber);
+						}
 	     
 }
 
