@@ -40,5 +40,7 @@ public interface CustomerService {
 	 
 	 public String updateMobileNumber(int id,String mobileNumber);
 	 
+	 public String  updateAge(int id,int age);
+	 
 
 }

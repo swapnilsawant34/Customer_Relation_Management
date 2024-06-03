@@ -184,13 +184,23 @@ public class CustomerController {
 			
 			
 			// API:17-update customer details by mobile number.
-						@PutMapping("/updatemobileno/{id}")
-						public String updateMobileNumber(@PathVariable int id, @RequestBody Map<String, String> request) {
+			@PutMapping("/updatemobileno/{id}")
+			public String updateMobileNumber(@PathVariable int id, @RequestBody Map<String, String> request) {
 
-							String mobileNumber = request.get("mobileNumber");
-							return customerService.updateMobileNumber(id, mobileNumber);
-						}
-	     
+				String mobileNumber = request.get("mobileNumber");
+				return customerService.updateMobileNumber(id, mobileNumber);
+			}			
+						
+						
+	  
+			// API:18-update customer details by age.
+			@PutMapping("/updateage/{id}")
+			public String updateAge(@PathVariable int id, @RequestBody Map<String, Integer> request) {
+
+				int age = request.get("age");
+				return customerService.updateAge(id, age);
+			}						
+							
 }
 
 

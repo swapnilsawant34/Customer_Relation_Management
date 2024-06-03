@@ -296,4 +296,19 @@ public class CustomerDao {
     	   
     	   
        }
+       
+       public String updateAge(int id,int age)
+       {
+    	  
+    	   Session session = sf.openSession();
+    	   Transaction tr = session.beginTransaction();
+    	   Customer customer = session.get(Customer.class, id);
+    	   customer.setAge(age);
+    	   tr.commit();
+    	   session.close();
+    	   
+    	   return "Customer's Age is updated Succesfully"; 
+    	   
+    	   
+       }
 }

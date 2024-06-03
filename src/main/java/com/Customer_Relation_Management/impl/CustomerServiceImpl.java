@@ -169,6 +169,15 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return updateMobileNumber;
 	}
+
+
+	@Override
+	public String updateAge(int id, int age) {
+		
+		String updateAge = customerDao.updateAge(id, age);
+		
+		return updateAge;
+	}
 	
 	
 	
