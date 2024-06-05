@@ -42,5 +42,9 @@ public interface CustomerService {
 	 
 	 public String  updateAge(int id,int age);
 	 
+	 public List<String> getCustomersFirstName();
+	 
+	  public List<String> getCustomersEmail();
+	 
 
 }

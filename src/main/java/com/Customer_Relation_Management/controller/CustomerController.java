@@ -199,7 +199,25 @@ public class CustomerController {
 
 				int age = request.get("age");
 				return customerService.updateAge(id, age);
-			}						
+			}
+			
+			//API:19-fetch customer's first name
+			@GetMapping("/firstName")
+			public List<String> getCustomersFirstName()
+			{
+				List<String> customersFirstName = customerService.getCustomersFirstName();
+				return customersFirstName;
+				
+			}
+			
+			//API:20-fetch customer's email
+			@GetMapping("/email")
+			public List<String> getCustomersEmail()
+			{
+				List<String> customersEmail = customerService.getCustomersEmail();
+				return customersEmail;
+				
+			}
 							
 }
 

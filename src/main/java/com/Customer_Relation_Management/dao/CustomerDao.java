@@ -311,4 +311,21 @@ public class CustomerDao {
     	   
     	   
        }
+       
+       
+       public List<String> getCustomersFirstName()
+       {
+    	   Session session = sf.openSession();
+    	   List list = session.createQuery("select c.firstName from Customer c").list();
+    	   return list;
+    	   
+       }
+       
+       public List<String> getCustomersEmail()
+       {
+    	   Session session = sf.openSession();
+    	   List list = session.createQuery("select c.email from Customer c").list();
+    	   return list;
+    	   
+       }
 }

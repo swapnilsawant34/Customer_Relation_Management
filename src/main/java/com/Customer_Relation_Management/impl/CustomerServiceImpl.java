@@ -178,6 +178,23 @@ public class CustomerServiceImpl implements CustomerService {
 		
 		return updateAge;
 	}
+
+
+	@Override
+	public List<String> getCustomersFirstName() {
+		
+		List<String> customersFirstName = customerDao.getCustomersFirstName();
+		
+		return customersFirstName;
+	}
+
+
+	@Override
+	public List<String> getCustomersEmail() {
+	
+		List<String> customersEmail = customerDao.getCustomersEmail();
+		return customersEmail;
+	}
 	
 	
 	
